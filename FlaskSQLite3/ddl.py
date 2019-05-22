@@ -4,6 +4,7 @@ conn = sqlite3.connect('escola.db')
 
 cursor = conn.cursor()
 
+
 cursor.execute("""
     CREATE TABLE TB_ALUNO(
         ID_ALUNO INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
