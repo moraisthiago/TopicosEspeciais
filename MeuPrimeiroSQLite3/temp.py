@@ -14,7 +14,7 @@ cursor.execute("""
     );
 """)
 
-print("Tabela criada com sucesso.")
+print("Tabela criada com sucesso!")
 
 cursor.execute("""
     INSERT INTO TB_ESTUDANTE(NOME, ENDERECO, NASCIMENTO, MATRICULA)
@@ -26,5 +26,32 @@ cursor.execute("""
 conn.commit()
 
 print("Inserido com sucesso!")
+
+cursor.execute("""
+    SELECT * FROM TB_ESTUDANTE;
+""")
+
+for linha in cursor.fetchall():
+    print(linha)
+
+valores = [('José', 'Rua Costa Meriz', '2000-02-29', '201610010012')]
+
+cursor.executemany("""
+    INSERT INTO TB_ESTUDANTE(NOME, ENDERECO, NASCIMENTO, MATRICULA)
+    VALUES(?,?,?,?);
+""", valores)
+
+conn.commit()
+
+print ("Valores inseridos com sucesso!")
+
+cursor.execute("""
+    SELECT *
+    FROM TB_ESTUDANTE;
+""")
+
+for linha in cursor.fetchall():
+    print(linha[1])
+
 
 conn.close()
