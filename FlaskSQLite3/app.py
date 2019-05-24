@@ -27,8 +27,25 @@ def getAlunos():
 
 
 @app.route("/alunos/<int:id>", methods=['GET'])
-def getAlunosByID(id):
+def getAlunoByID(id):
     pass
+
+@app.route("/alunos/cadastro", methods=['POST'])
+def setAluno():
+
+    print ("Cadastrando discente!")
+
+    return ("Cadastro realizado com sucesso!", 200)
+    '''
+    conn = sqlite3.connect('escola.db')
+
+    cursor = conn.cursor()
+
+    cursor.execute("""
+
+    """)
+    '''
+
 
 
 @app.route("/cursos", methods=['GET'])
@@ -37,7 +54,7 @@ def getCursos():
 
 
 @app.route("/cursos/<int:id>", methods=['GET'])
-def getCursosByID(id):
+def getCursoByID(id):
     pass
 
 
@@ -47,7 +64,7 @@ def getTurmas():
 
 
 @app.route("/turmas/<int:id>", methods=['GET'])
-def getTurmasByID(id):
+def getTurmaByID(id):
     pass
 
 if(__name__ == '__main__'):
