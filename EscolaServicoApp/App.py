@@ -30,9 +30,9 @@ def getEscolaByID(id):
 
     cursor.execute("""
 
-        SELECT * FROM TB_ESCOLAS WHERE ID = ?;
+        SELECT * FROM TB_ESCOLAS WHERE ID_ESCOLA = ?;
 
-    """, (id))
+    """, (id, ))
 
     for linha in cursor.fetchall():
         print(linha)
@@ -57,7 +57,7 @@ def setEscola():
         INSERT INTO TB_ESCOLAS(NOME, LOGRADOURO, CIDADE)
         VALUES(?,?,?);
 
-    """, (nome, logradouro, cidade))
+    """, (nome, logradouro, cidade, ))
 
     conn.commit()
     conn.close()
@@ -93,9 +93,9 @@ def getAlunoByID(id):
 
     cursor.execute("""
 
-        SELECT * FROM TB_ALUNOS WHERE ID = ?;
+        SELECT * FROM TB_ALUNOS WHERE ID_ALUNO = ?;
 
-    """, (id))
+    """, (id, ))
 
     for linha in cursor.fetchall():
         print(linha)
@@ -122,7 +122,7 @@ def setAlunos():
         INSERT INTO TB_ALUNOS(NOME, MATRICULA, CPF, NASCIMENTO)
         VALUES(?,?,?,?);
 
-    """, (nome, matricula, cpf, nascimento))
+    """, (nome, matricula, cpf, nascimento, ))
 
     conn.commit()
     conn.close()
@@ -158,9 +158,9 @@ def getCursoByID(id):
 
     cursor.execute("""
 
-        SELECT * FROM TB_CURSOS WHERE ID = ?;
+        SELECT * FROM TB_CURSOS WHERE ID_CURSO = ?;
 
-    """, (id))
+    """, (id, ))
 
     for linha in cursor.fetchall():
         print(linha)
@@ -184,7 +184,7 @@ def setCursos():
         INSERT INTO TB_CURSOS(NOME, TURNO)
         VALUES(?, ?);
 
-    """, (nome, turno))
+    """, (nome, turno, ))
 
     conn.commit()
     conn.close()
@@ -220,9 +220,9 @@ def getTurmaByID(id):
 
     cursor.execute("""
 
-        SELECT * FROM TB_TURMAS WHERE ID = ?;
+        SELECT * FROM TB_TURMAS WHERE ID_TURMA = ?;
 
-    """, (id))
+    """, (id, ))
 
     for linha in cursor.fetchall():
         print(linha)
@@ -246,7 +246,7 @@ def setTurmas():
         INSERT INTO TB_TURMAS(NOME, CURSO)
         VALUES(?, ?);
 
-    """, (nome, curso))
+    """, (nome, curso, ))
 
     conn.commit()
     conn.close()
@@ -282,9 +282,9 @@ def getDisciplinaByID(id):
 
     cursor.execute("""
 
-        SELECT * FROM TB_DISCIPLINAS WHERE ID = ?;
+        SELECT * FROM TB_DISCIPLINAS WHERE ID_DISCIPLINA = ?;
 
-    """, (id))
+    """, (id, ))
 
     for linha in cursor.fetchall():
         print(linha)
