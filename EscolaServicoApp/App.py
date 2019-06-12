@@ -3,6 +3,12 @@ import sqlite3
 
 app = Flask(__name__)
 
+def show_list(cursor, row):
+    d = {}
+    for idx, col in enumerate(cursor.description):
+        d[col[0]] = row[idx]
+    return d
+
 @app.route("/escolas", methods=['GET'])
 def getEscolas():
 
@@ -13,13 +19,14 @@ def getEscolas():
     cursor.execute("""
         SELECT * FROM TB_ESCOLAS;
     """)
-
+    
+    escolas = []
     for linha in cursor.fetchall():
-        print(linha)
+        escolas.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(escolas))
 
 @app.route("/escolas/<int:id>", methods=['GET'])
 def getEscolaByID(id):
@@ -34,12 +41,13 @@ def getEscolaByID(id):
 
     """, (id, ))
 
+    escola = []
     for linha in cursor.fetchall():
-        print(linha)
+        escola.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(escola))
 
 @app.route("/escola", methods=['POST'])
 def setEscola():
@@ -77,12 +85,13 @@ def getAlunos():
 
     """)
 
+    alunos = []
     for linha in cursor.fetchall():
-        print(linha)
+        alunos.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(alunos))
 
 @app.route("/alunos/<int:id>", methods=['GET'])
 def getAlunoByID(id):
@@ -97,13 +106,14 @@ def getAlunoByID(id):
 
     """, (id, ))
 
+    aluno = []
     for linha in cursor.fetchall():
-        print(linha)
+        aluno.append(show_list(cursor, linha))
 
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(aluno))
 
 @app.route("/aluno", methods=['POST'])
 def setAlunos():
@@ -142,12 +152,13 @@ def getCursos():
 
     """)
 
+    cursos = []
     for linha in cursor.fetchall():
-        print(linha)
+        cursos.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(cursos))
 
 @app.route("/cursos/<int:id>", methods=['GET'])
 def getCursoByID(id):
@@ -162,12 +173,13 @@ def getCursoByID(id):
 
     """, (id, ))
 
+    curso = []
     for linha in cursor.fetchall():
-        print(linha)
+        curso.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(curso))
 
 @app.route("/curso", methods=['POST'])
 def setCursos():
@@ -204,12 +216,13 @@ def getTurmas():
 
     """)
 
+    turmas = []
     for linha in cursor.fetchall():
-        print(linha)
+        turmas.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(turmas))
 
 @app.route("/turmas/<int:id>", methods=['GET'])
 def getTurmaByID(id):
@@ -224,12 +237,13 @@ def getTurmaByID(id):
 
     """, (id, ))
 
+    turma = []
     for linha in cursor.fetchall():
-        print(linha)
+        turma.append(show_list(cursor, linha))
 
     conn.close()
 
-    return ("Executado!", 200)
+    return (jsonify(turma))
 
 @app.route("/turma", methods=['POST'])
 def setTurmas():
@@ -266,14 +280,15 @@ def getDisciplinas():
 
     """)
 
+    disciplinas = []
     for linha in cursor.fetchall():
-        print(linha)
+        disciplinas.append(show_list(cursor, linha))
 
     conn.close()
 
-    return("Executado!", 200)
+    return(jsonify(disciplinas))
 
-@app.route("/disciplinas/int:<id>", methods=['GET'])
+@app.route("/disciplinas/<int:id>", methods=['GET'])
 def getDisciplinaByID(id):
 
     conn = sqlite3.connect('ifpb.db')
@@ -286,12 +301,13 @@ def getDisciplinaByID(id):
 
     """, (id, ))
 
+    disciplina = []
     for linha in cursor.fetchall():
-        print(linha)
+        disciplina.append(show_list(cursor, linha))
 
-    conn.clole()
+    conn.close()
 
-    return("Executado!", 200)
+    return(jsonify(disciplina))
 
 @app.route("/disciplina", methods=['POST'])
 def setDisciplinas():
