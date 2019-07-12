@@ -41,9 +41,10 @@ def getEscolaByID(id):
 
     """, (id, ))
 
+
+    linha = cursor.fetchone()
     escola = []
-    for linha in cursor.fetchall():
-        escola.append(show_list(cursor, linha))
+    escola.append(show_list(cursor, linha))
 
     conn.close()
 
@@ -153,10 +154,9 @@ def getAlunoByID(id):
 
     """, (id, ))
 
+    linha = cursor.fetchone()
     aluno = []
-    for linha in cursor.fetchall():
-        aluno.append(show_list(cursor, linha))
-
+    aluno.append(show_list(cursor, linha))
 
     conn.close()
 
@@ -270,9 +270,9 @@ def getCursoByID(id):
 
     """, (id, ))
 
+    linha = cursor.fetchone()
     curso = []
-    for linha in cursor.fetchall():
-        curso.append(show_list(cursor, linha))
+    curso.append(show_list(cursor, linha))
 
     conn.close()
 
@@ -366,9 +366,9 @@ def getTurmaByID(id):
 
     """, (id, ))
 
+    linha = cursor.fetchone()
     turma = []
-    for linha in cursor.fetchall():
-        turma.append(show_list(cursor, linha))
+    turma.append(show_list(cursor, linha))
 
     conn.close()
 
@@ -479,9 +479,9 @@ def getDisciplinaByID(id):
 
     """, (id, ))
 
+    linha = cursor.fetchone()
     disciplina = []
-    for linha in cursor.fetchall():
-        disciplina.append(show_list(cursor, linha))
+    disciplina.append(show_list(cursor, linha))
 
     conn.close()
 
