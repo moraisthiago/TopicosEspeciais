@@ -73,7 +73,7 @@ def setEscola():
     conn.close()
 
     id = cursor.lastrowid
-    escola['ID_ESCOLA'] = id
+    escola['id_escola'] = id
 
     return (jsonify(escola))
 
@@ -186,7 +186,7 @@ def setAlunos():
     conn.close()
 
     id = cursor.lastrowid
-    aluno['ID_ALUNO'] = id
+    aluno['id_aluno'] = id
 
     return (jsonify(aluno))
 
@@ -300,7 +300,7 @@ def setCursos():
     conn.close()
 
     id = cursor.lastrowid
-    curso['ID_CURSO'] = id
+    curso['id_curso'] = id
 
     return (jsonify(curso))
 
@@ -397,7 +397,7 @@ def setTurmas():
     conn.close()
 
     id = cursor.lastrowid
-    turma['ID_TURMA'] = id
+    turma['id_turma'] = id
 
     return (jsonify(turma))
 
@@ -508,7 +508,7 @@ def setDisciplinas():
     conn.close()
 
     id = cursor.lastrowid
-    disciplina['ID_DISCIPLINA'] = id
+    disciplina['id_disciplina'] = id
 
     return (jsonify(disciplina))
 
