@@ -1,7 +1,16 @@
 from flask import Flask, request, jsonify
 import sqlite3
+import logging
 
 app = Flask(__name__)
+
+formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+handler = logging.FileHandler("escolaapp.log")
+handler = setFormatter(formatter)
+
+logger = app.logger
+logger.addHandler(handler)
+logger.setLevel(logging.INFO)
 
 def show_list(cursor, row):
     d = {}
@@ -11,6 +20,7 @@ def show_list(cursor, row):
 
 @app.route("/escolas", methods=['GET'])
 def getEscolas():
+    logger.info("Listando escolas.")
 
     conn = sqlite3.connect("ifpb.db")
 
@@ -30,6 +40,7 @@ def getEscolas():
 
 @app.route("/escolas/<int:id>", methods=['GET'])
 def getEscolaByID(id):
+    logger.info("Listando escola pelo id: {}" .format(id))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -58,6 +69,8 @@ def setEscola():
     logradouro = escola['logradouro']
     cidade = escola['cidade']
 
+    logger.info("Inserindo escola: \n Nome: {} \n Logradouro: {} \n Cidade: {}" .format(nome, logradouro, cidade))
+
     conn = sqlite3.connect('ifpb.db')
 
     cursor = conn.cursor()
@@ -84,6 +97,8 @@ def updateEscola():
     nome = escola['nome']
     logradouro = escola['logradouro']
     cidade = escola['cidade']
+
+    logger.info("Atualizando escola: \n Nome: {} \n Logradouro: {} \n Cidade: {}" .format(nome, logradouro, cidade))
 
     cursor.execute("""
 
@@ -123,6 +138,8 @@ def updateEscola():
 @app.route("/alunos", methods=['GET'])
 def getAlunos():
 
+    logger.info("Listando alunos.")
+
     conn = sqlite3.connect('ifpb.db')
 
     cursor = conn.cursor()
@@ -143,6 +160,7 @@ def getAlunos():
 
 @app.route("/alunos/<int:id>", methods=['GET'])
 def getAlunoByID(id):
+    logger.info("Listando aluno pelo id: {}" .format(id))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -171,6 +189,8 @@ def setAlunos():
     cpf = aluno['cpf']
     nascimento = aluno['nascimento']
 
+    logger.info("Inserindo aluno: \n Nome: {} \n Matricula: {} \n CPf: {} \n Nascimento: {}" .format(nome, matricula, cpf, aluno))
+
     conn = sqlite3.connect('ifpb.db')
 
     cursor = conn.cursor()
@@ -193,24 +213,26 @@ def setAlunos():
 @app.route("/alunos/<int:id>", methods=["PUT"])
 def updateAluno():
 
-	aluno = request.get_json()
-	nome = aluno['nome']
-	matricula = aluno['matricula']
-	cpf = aluno['cpf']
-	nascimento = aluno['nascimento']
+    aluno = request.get_json()
+    nome = aluno['nome']
+    matricula = aluno['matricula']
+    cpf = aluno['cpf']
+    nascimento = aluno['nascimento']
 
-	conn = sqlite3.connect('ifpb.db')
-	cursor = conn.cursor()
+    logger.info("Atualizando aluno: \n Nome: {} \n Matricula: {} \n CPf: {} \n Nascimento: {}" .format(nome, matricula, cpf, aluno))
 
-	cursor.execute("""
+    conn = sqlite3.connect('ifpb.db')
+    cursor = conn.cursor()
 
-		SELECT * FROM TB_ALUNOS WHERE ID_ALUNO = ?;
+    cursor.execute("""
 
-	"""(id,))
+        SELECT * FROM TB_ALUNOS WHERE ID_ALUNO = ?;
 
-	data = cursor.fetchone()
+    """(id,))
 
-	if data is not None:
+    data = cursor.fetchone()
+
+    if data is not None:
 
 		cursor.execute("""
 
