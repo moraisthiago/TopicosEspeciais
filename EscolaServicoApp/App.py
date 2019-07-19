@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
-import sqlite3
 import logging
+
+import sqlite3
 
 app = Flask(__name__)
 
@@ -11,6 +12,7 @@ handler = setFormatter(formatter)
 logger = app.logger
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
+
 
 def show_list(cursor, row):
     d = {}
@@ -234,32 +236,33 @@ def updateAluno():
 
     if data is not None:
 
-		cursor.execute("""
+        cursor.execute("""
 
-			UPDATE TB_ALUNOS SET NOME = ?, MATRICULA = ?, CPF = ?, NASCIMENTO = ? WHERE ID_ALUNO = ?;
-		"""(nome, matricula, cpf, nascimento, id))
+            UPDATE TB_ALUNOS SET NOME = ?, MATRICULA = ?, CPF = ?, NASCIMENTO = ? WHERE ID_ALUNO = ?;
+        """(nome, matricula, cpf, nascimento, id))
 
-		conn.commit()
+        conn.commit()
 
-	else:
+    else:
 
-		cursor.execute("""
+        cursor.execute("""
 
-			INSERT INTO TB_ALUNOS(NOME, MATRICULA, CPF, NASCIMENTO)
-			VALUES(?,?,?,?)
+            INSERT INTO TB_ALUNOS(NOME, MATRICULA, CPF, NASCIMENTO)
+            VALUES(?,?,?,?)
 
-		"""(nome, matricula, cpf, nascimento))
+        """(nome, matricula, cpf, nascimento))
 
-		conn.commit()
-		id = cursor.lastrowid
-		aluno['id_aluno'] = id
+        conn.commit()
+        id = cursor.lastrowid
+        aluno['id_aluno'] = id
 
-	conn.close()
+    conn.close()
 
-	return jsonify(aluno)
+    return jsonify(aluno)
 
 @app.route("/cursos", methods=['GET'])
 def getCursos():
+    logger.info("Listando cursos.")
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -281,6 +284,7 @@ def getCursos():
 
 @app.route("/cursos/<int:id>", methods=['GET'])
 def getCursoByID(id):
+    logging.info("Listando curso pelo id: {}" .format(id))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -306,6 +310,8 @@ def setCursos():
     curso = request.get_json()
     nome = curso['nome']
     turno = curso['turno']
+
+    logger.info("Inserindo curso: \n Nome: {} \n Turno: {}" .format(nome, turno))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -333,6 +339,8 @@ def updateCurso():
     turno = curso['turno']
     conn = sqlite3.connect('ifpb.db')
 
+    logger.info("Atualizando curso: \n Nome: {} \n Turno: {}" .format(nome, turno))
+
     cursor = conn.cursor()
 
     cursor.execute("""SELECT * FROM TB_CURSOS WHERE ID_CURSO = ?;"""(id,))
@@ -356,6 +364,7 @@ def updateCurso():
 
 @app.route("/turmas", methods=['GET'])
 def getTurmas():
+    logger.info("Listando turmas.")
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -377,6 +386,7 @@ def getTurmas():
 
 @app.route("/turmas/<int:id>", methods=['GET'])
 def getTurmaByID(id):
+    logger.info("Listando turma pelo id: {}" .format(id))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -404,6 +414,8 @@ def setTurmas():
     nome = turma['nome']
     curso = turma['curso']
 
+    logger.info("Inserindo turma: \n Nome: {} \n Curso: {}" .format(nome, curso))
+
     conn = sqlite3.connect('ifpb.db')
 
     cursor = conn.cursor()
@@ -430,6 +442,8 @@ def updateTurma():
 
     nome = turma['nome']
     curso = turma['curso']
+
+    logger.info("Atualizando turma: \n Nome: {} \n Curso: {}" .format(nome, curso))
 
     conn = sqlite3.connect('ifpb.db')
     cursor = conn.cursor()
@@ -469,6 +483,7 @@ def updateTurma():
 
 @app.route("/disciplinas", methods=['GET'])
 def getDisciplinas():
+    logger.info("Listando disciplinas.")
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -490,6 +505,7 @@ def getDisciplinas():
 
 @app.route("/disciplinas/<int:id>", methods=['GET'])
 def getDisciplinaByID(id):
+    logger.info("Listando disciplina pelo id: {}" .format(id))
 
     conn = sqlite3.connect('ifpb.db')
 
@@ -515,6 +531,8 @@ def setDisciplinas():
     disciplina = request.get_json()
     nome = disciplina['nome']
 
+    logger.info("Inserindo disciplina: \n Nome: {}" .format(nome))
+
     conn = sqlite3.connect('ifpb.db')
 
     cursor = conn.cursor()
@@ -539,6 +557,8 @@ def updateDisciplina():
 
     disciplina = request.get_json()
     nome = disciplina['nome']
+
+    logger.info("Atualizando disciplina: \n Nome: {}" .format(nome))
 
     conn = sqlite3.connect('ifpb.db')
     cursor = conn.cursor()
