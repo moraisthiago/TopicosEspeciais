@@ -441,21 +441,25 @@ def getTurmas():
 def getTurmaByID(id):
     logger.info("Listando turma pelo id: {}" .format(id))
 
-    conn = sqlite3.connect('ifpb.db')
+    try:
+        conn = sqlite3.connect('ifpb.db')
 
-    cursor = conn.cursor()
+        cursor = conn.cursor()
 
-    cursor.execute("""
+        cursor.execute("""
 
-        SELECT * FROM TB_TURMAS WHERE ID_TURMA = ?;
+            SELECT * FROM TB_TURMAS WHERE ID_TURMA = ?;
 
-    """, (id, ))
+        """, (id, ))
 
-    linha = cursor.fetchone()
-    turma = []
-    turma.append(show_list(cursor, linha))
+        linha = cursor.fetchone()
+        turma = []
+        turma.append(show_list(cursor, linha))
 
-    conn.close()
+        conn.close()
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return (jsonify(turma))
 
@@ -469,22 +473,26 @@ def setTurmas():
 
     logger.info("Inserindo turma: \n Nome: {} \n Curso: {}" .format(nome, curso))
 
-    conn = sqlite3.connect('ifpb.db')
+    try:
+        conn = sqlite3.connect('ifpb.db')
 
-    cursor = conn.cursor()
+        cursor = conn.cursor()
 
-    cursor.execute("""
+        cursor.execute("""
 
-        INSERT INTO TB_TURMAS(NOME, CURSO)
-        VALUES(?, ?);
+            INSERT INTO TB_TURMAS(NOME, CURSO)
+            VALUES(?, ?);
 
-    """, (nome, curso, ))
+        """, (nome, curso, ))
 
-    conn.commit()
-    conn.close()
+        conn.commit()
+        conn.close()
 
-    id = cursor.lastrowid
-    turma['id_turma'] = id
+        id = cursor.lastrowid
+        turma['id_turma'] = id
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return (jsonify(turma))
 
@@ -498,39 +506,43 @@ def updateTurma():
 
     logger.info("Atualizando turma: \n Nome: {} \n Curso: {}" .format(nome, curso))
 
-    conn = sqlite3.connect('ifpb.db')
-    cursor = conn.cursor()
-
-    cursor.execute("""
-
-        SELECT * FROM TB_TURMAS WHERE ID_TURMA = ?;
-
-        """(id,))
-
-    data = cursor.fetchone()
-
-    if data is not None:
-
-        cursor.execute("""
-            UPDATE TB_TURMAS SET NOME=?, CURSO=? WHERE  = ?;
-        """(nome, curso, id))
-
-        conn.commit()
-
-    else:
+    try:
+        conn = sqlite3.connect('ifpb.db')
+        cursor = conn.cursor()
 
         cursor.execute("""
 
-            INSERT INTO TB_TURMAS(NOME, CURSO)
-            VALUES(?,?)
+            SELECT * FROM TB_TURMAS WHERE ID_TURMA = ?;
 
-        """(nome, curso))
+            """(id,))
 
-        conn.commit()
-        id = cursor.lastrowid
-        turma['id_turma'] = id
+        data = cursor.fetchone()
 
-    conn.close()
+        if data is not None:
+
+            cursor.execute("""
+                UPDATE TB_TURMAS SET NOME=?, CURSO=? WHERE  = ?;
+            """(nome, curso, id))
+
+            conn.commit()
+
+        else:
+
+            cursor.execute("""
+
+                INSERT INTO TB_TURMAS(NOME, CURSO)
+                VALUES(?,?)
+
+            """(nome, curso))
+
+            conn.commit()
+            id = cursor.lastrowid
+            turma['id_turma'] = id
+
+        conn.close()
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return jsonify()
 
@@ -538,21 +550,25 @@ def updateTurma():
 def getDisciplinas():
     logger.info("Listando disciplinas.")
 
-    conn = sqlite3.connect('ifpb.db')
+    try:
+        conn = sqlite3.connect('ifpb.db')
 
-    cursor = conn.cursor()
+        cursor = conn.cursor()
 
-    cursor.execute("""
+        cursor.execute("""
 
-        SELECT * FROM TB_DISCIPLINAS;
+            SELECT * FROM TB_DISCIPLINAS;
 
-    """)
+        """)
 
-    disciplinas = []
-    for linha in cursor.fetchall():
-        disciplinas.append(show_list(cursor, linha))
+        disciplinas = []
+        for linha in cursor.fetchall():
+            disciplinas.append(show_list(cursor, linha))
 
-    conn.close()
+        conn.close()
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return(jsonify(disciplinas))
 
@@ -560,21 +576,25 @@ def getDisciplinas():
 def getDisciplinaByID(id):
     logger.info("Listando disciplina pelo id: {}" .format(id))
 
-    conn = sqlite3.connect('ifpb.db')
+    try:
+        conn = sqlite3.connect('ifpb.db')
 
-    cursor = conn.cursor()
+        cursor = conn.cursor()
 
-    cursor.execute("""
+        cursor.execute("""
 
-        SELECT * FROM TB_DISCIPLINAS WHERE ID_DISCIPLINA = ?;
+            SELECT * FROM TB_DISCIPLINAS WHERE ID_DISCIPLINA = ?;
 
-    """, (id, ))
+        """, (id, ))
 
-    linha = cursor.fetchone()
-    disciplina = []
-    disciplina.append(show_list(cursor, linha))
+        linha = cursor.fetchone()
+        disciplina = []
+        disciplina.append(show_list(cursor, linha))
 
-    conn.close()
+        conn.close()
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return(jsonify(disciplina))
 
@@ -586,22 +606,26 @@ def setDisciplinas():
 
     logger.info("Inserindo disciplina: \n Nome: {}" .format(nome))
 
-    conn = sqlite3.connect('ifpb.db')
+    try:
+        conn = sqlite3.connect('ifpb.db')
 
-    cursor = conn.cursor()
+        cursor = conn.cursor()
 
-    cursor.execute("""
+        cursor.execute("""
 
-        INSERT INTO TB_DISCIPLINAS(NOME)
-        VALUES(?);
+            INSERT INTO TB_DISCIPLINAS(NOME)
+            VALUES(?);
 
-    """, (nome, ))
+        """, (nome, ))
 
-    conn.commit()
-    conn.close()
+        conn.commit()
+        conn.close()
 
-    id = cursor.lastrowid
-    disciplina['id_disciplina'] = id
+        id = cursor.lastrowid
+        disciplina['id_disciplina'] = id
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return (jsonify(disciplina))
 
@@ -613,40 +637,44 @@ def updateDisciplina():
 
     logger.info("Atualizando disciplina: \n Nome: {}" .format(nome))
 
-    conn = sqlite3.connect('ifpb.db')
-    cursor = conn.cursor()
-
-    cursor.execute("""
-
-        SELECT * FROM TB_DISCIPLINAS WHERE ID_DISCIPLINA = ?;
-
-    """(id,))
-
-    data = cursor.fetchone()
-
-    if data is not None:
+    try:
+        conn = sqlite3.connect('ifpb.db')
+        cursor = conn.cursor()
 
         cursor.execute("""
 
-            UPDATE TB_DISCIPLINAS SET NOME=? WHERE ID_DISCIPLINA = ?;
-        """(nome, ))
+            SELECT * FROM TB_DISCIPLINAS WHERE ID_DISCIPLINA = ?;
 
-        conn.commit()
+        """(id,))
 
-    else:
+        data = cursor.fetchone()
 
-        cursor.execute("""
+        if data is not None:
 
-            INSERT INTO TB_DISCIPLINAS(NOME)
-            VALUES(?)
+            cursor.execute("""
 
-        """(nome, ))
+                UPDATE TB_DISCIPLINAS SET NOME=? WHERE ID_DISCIPLINA = ?;
+            """(nome, ))
 
-        conn.commit()
-        id = cursor.lastrowid
-        disciplina['id_disciplina'] = id
+            conn.commit()
 
-    conn.close()
+        else:
+
+            cursor.execute("""
+
+                INSERT INTO TB_DISCIPLINAS(NOME)
+                VALUES(?)
+
+            """(nome, ))
+
+            conn.commit()
+            id = cursor.lastrowid
+            disciplina['id_disciplina'] = id
+
+        conn.close()
+
+    except:
+        logger.error("Ocorreu um erro.")
 
     return jsonify()
 
