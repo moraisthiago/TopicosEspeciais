@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_json_schema import JsonSchema, JsonValidationError
 import logging
 
 import sqlite3
@@ -12,6 +13,52 @@ handler.setFormatter(formatter)
 logger = app.logger
 logger.addHandler(handler)
 logger.setLevel(logging.INFO)
+
+schema = JsonSchema()
+schema.init_app(app)
+
+escola_schema = {
+    'required': ['nome', 'logradouro', 'cidade'],
+    'propiertes': {
+        'nome' {'type': 'string'},
+        'logradouro': {'type': 'string'},
+        'cidade': {'type': 'string'}
+    }
+}
+
+aluno_schema = {
+    'required': ['nome', 'matricula', 'cpf', 'nascimento'],
+    'propiertes': {
+        'nome': {'type': 'string'},
+        'matricula': {'type': 'string'},
+        'cpf': {'type': 'string'},
+        'nascimento': {'type': 'string'}
+    }
+}
+
+curso_schema = {
+    'required': ['nome', 'turno'],
+    'propiertes': {
+        'nome': {'type': 'string'},
+        'logradouro': {'type': 'string'},
+        'cidade': {'type': 'string'}
+    }
+}
+
+turma_schema = {
+    'required': ['nome', 'curso'],
+    'propiertes': {
+        'nome': {'type': 'string'},
+        'curso': {'type': 'string'}
+    }
+}
+
+disciplina_schema = {
+    'required': ['nome'].
+    'propiertes': {
+        'nome': {'type': 'string'}
+    }
+}
 
 
 def show_list(cursor, row):
@@ -71,6 +118,7 @@ def getEscolaByID(id):
     return (jsonify(escola))
 
 @app.route("/escola", methods=['POST'])
+@schema.validate(escola_schema)
 def setEscola():
 
     escola = request.get_json()
@@ -208,6 +256,7 @@ def getAlunoByID(id):
     return (jsonify(aluno))
 
 @app.route("/aluno", methods=['POST'])
+@schema.validate(aluno_schema)
 def setAlunos():
 
     aluno = request.get_json()
@@ -346,6 +395,7 @@ def getCursoByID(id):
     return (jsonify(curso))
 
 @app.route("/curso", methods=['POST'])
+@schema.validate(escola_schema)
 def setCursos():
 
     curso = request.get_json()
@@ -464,6 +514,7 @@ def getTurmaByID(id):
     return (jsonify(turma))
 
 @app.route("/turma", methods=['POST'])
+@schema.validate(escola_schema)
 def setTurmas():
 
 
@@ -599,6 +650,7 @@ def getDisciplinaByID(id):
     return(jsonify(disciplina))
 
 @app.route("/disciplina", methods=['POST'])
+@schema.validate(escola_schema)
 def setDisciplinas():
 
     disciplina = request.get_json()
@@ -677,6 +729,10 @@ def updateDisciplina():
         logger.error("Ocorreu um erro.")
 
     return jsonify()
+
+@app.errorhandler(JsonValidationError)
+def validation_error(e):
+    return jsonify({ 'error': e.message, 'errors': [validation_error.message for validation_error  in e.errors]})
 
 if(__name__ == '__main__'):
     app.run(host='0.0.0.0', debug=True, use_reloader=True)
