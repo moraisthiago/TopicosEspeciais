@@ -19,7 +19,7 @@ schema.init_app(app)
 
 escola_schema = {
     'required': ['nome', 'logradouro', 'cidade'],
-    'propertes': {
+    'properties': {
         'nome' {'type': 'string'},
         'logradouro': {'type': 'string'},
         'cidade': {'type': 'string'}
@@ -28,7 +28,7 @@ escola_schema = {
 
 aluno_schema = {
     'required': ['nome', 'matricula', 'cpf', 'nascimento'],
-    'propertes': {
+    'properties': {
         'nome': {'type': 'string'},
         'matricula': {'type': 'string'},
         'cpf': {'type': 'string'},
@@ -38,7 +38,7 @@ aluno_schema = {
 
 curso_schema = {
     'required': ['nome', 'turno'],
-    'propertes': {
+    'properties': {
         'nome': {'type': 'string'},
         'logradouro': {'type': 'string'},
         'cidade': {'type': 'string'}
@@ -47,7 +47,7 @@ curso_schema = {
 
 turma_schema = {
     'required': ['nome', 'curso'],
-    'propertes': {
+    'properties': {
         'nome': {'type': 'string'},
         'curso': {'type': 'string'}
     }
@@ -55,7 +55,7 @@ turma_schema = {
 
 disciplina_schema = {
     'required': ['nome'].
-    'propertes': {
+    'properties': {
         'nome': {'type': 'string'}
     }
 }
