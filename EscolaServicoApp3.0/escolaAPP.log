@@ -1,0 +1,29 @@
+2019-08-09 09:31:30,527 - INFO - Listando endereços.
+2019-08-09 09:31:38,011 - INFO - Listando endereço pelo seu Id.
+2019-08-09 10:11:06,721 - INFO - Listando campus.
+2019-08-09 10:11:12,185 - INFO - Listando campus pelo seu Id.
+2019-08-09 10:11:34,872 - INFO - Listando escolas.
+2019-08-09 10:11:49,531 - INFO - Listando escola pelo seu Id.
+2019-08-15 08:01:29,730 - INFO - Listando endereços.
+2019-08-15 08:01:52,293 - INFO - Listando endereço pelo seu Id.
+2019-08-16 09:03:27,674 - INFO - Buscando dados do endereco.
+2019-08-16 09:18:44,620 - INFO - Buscando dados do endereco.
+2019-08-16 09:19:45,568 - INFO - Buscando dados do endereco.
+2019-08-16 09:20:27,929 - INFO - Listando endereços.
+2019-08-16 09:34:20,008 - INFO - Buscando dados do turno.
+2019-08-16 09:34:35,719 - INFO - Buscando dados do campus.
+2019-08-16 09:35:10,626 - INFO - Buscando dados do campus.
+2019-08-16 09:35:58,558 - INFO - Buscando dados do turno.
+2019-08-16 09:35:58,560 - ERROR - Ops,aconteceu um erro.
+2019-08-16 09:35:58,561 - ERROR - <class 'sqlite3.Error'>
+2019-08-16 09:39:36,563 - INFO - Listando alunos.
+2019-08-16 09:42:09,780 - INFO - Listando professores.
+2019-08-16 09:42:21,699 - INFO - Listando alunos.
+2019-08-16 09:42:24,293 - INFO - Listando disciplinas.
+2019-08-16 09:42:26,432 - INFO - Listando campus.
+2019-08-16 09:42:29,436 - INFO - Listando escolas.
+2019-08-16 09:42:32,897 - INFO - Listando cursos.
+2019-08-16 09:42:35,588 - INFO - Listando alunos.
+2019-08-16 09:42:38,514 - INFO - Listando professores.
+2019-08-16 09:42:40,589 - INFO - Listando turmas.
+2019-08-16 09:42:43,627 - INFO - Listando endereços.
