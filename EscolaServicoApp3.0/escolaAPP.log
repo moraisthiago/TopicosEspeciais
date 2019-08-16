@@ -6,6 +6,7 @@
 2019-08-09 10:11:49,531 - INFO - Listando escola pelo seu Id.
 2019-08-15 08:01:29,730 - INFO - Listando endereços.
 2019-08-15 08:01:52,293 - INFO - Listando endereço pelo seu Id.
+<<<<<<< HEAD
 2019-08-16 09:03:27,674 - INFO - Buscando dados do endereco.
 2019-08-16 09:18:44,620 - INFO - Buscando dados do endereco.
 2019-08-16 09:19:45,568 - INFO - Buscando dados do endereco.
@@ -27,3 +28,11 @@
 2019-08-16 09:42:38,514 - INFO - Listando professores.
 2019-08-16 09:42:40,589 - INFO - Listando turmas.
 2019-08-16 09:42:43,627 - INFO - Listando endereços.
+=======
+2019-08-15 08:22:38,862 - INFO - Buscando dados do endereco.
+2019-08-15 08:37:44,477 - INFO - Buscando dados do endereco.
+2019-08-15 08:39:29,823 - INFO - Buscando dados do endereco.
+2019-08-15 08:39:48,331 - INFO - Buscando dados do endereco.
+2019-08-15 08:40:30,030 - INFO - Buscando dados do endereco.
+2019-08-15 08:41:26,071 - INFO - Buscando dados do endereco.
+>>>>>>> 5f519288a289fbc49e9077ec2980f8b85fd2156b
