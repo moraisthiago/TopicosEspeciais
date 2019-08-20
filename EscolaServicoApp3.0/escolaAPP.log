@@ -27,3 +27,158 @@
 2019-08-16 09:42:38,514 - INFO - Listando professores.
 2019-08-16 09:42:40,589 - INFO - Listando turmas.
 2019-08-16 09:42:43,627 - INFO - Listando endereços.
+2019-08-16 09:48:59,922 - INFO - Buscando dados do campus.
+2019-08-16 09:49:07,270 - INFO - Buscando dados do turno.
+2019-08-16 09:49:07,270 - ERROR - Ops,aconteceu um erro.
+2019-08-16 09:49:07,271 - ERROR - <class 'sqlite3.Error'>
+2019-08-16 09:49:15,071 - INFO - Buscando dados do endereco.
+2019-08-16 09:49:17,865 - INFO - Listando alunos.
+2019-08-16 09:49:20,036 - INFO - Listando disciplinas.
+2019-08-16 09:49:22,560 - INFO - Listando campus.
+2019-08-16 09:49:24,855 - INFO - Listando escolas.
+2019-08-16 09:49:26,676 - INFO - Listando turmas.
+2019-08-16 09:49:28,629 - INFO - Listando professores.
+2019-08-16 09:49:30,999 - INFO - Listando endereços.
+2019-08-16 09:49:37,962 - INFO - Listando campus pelo seu Id.
+2019-08-16 09:56:04,189 - INFO - Buscando dados do endereco.
+2019-08-20 08:52:17,574 - INFO - Buscando dados do endereco.
+2019-08-20 08:52:23,593 - INFO - Buscando dados do endereco.
+2019-08-20 08:54:50,769 - INFO - Listando endereços.
+2019-08-20 08:57:52,994 - INFO - Buscando dados do professor.
+2019-08-20 08:58:52,439 - INFO - Buscando dados da turma.
+2019-08-20 08:59:34,293 - INFO - Buscando dados do aluno.
+2019-08-20 08:59:50,341 - INFO - Buscando dados do aluno.
+2019-08-20 09:00:12,465 - INFO - Buscando dados da disciplina.
+2019-08-20 09:01:26,816 - INFO - Buscando dados da disciplina.
+2019-08-20 09:04:17,292 - INFO - Buscando dados do professor.
+2019-08-20 09:04:56,139 - INFO - Buscando dados da disciplina.
+2019-08-20 09:05:01,698 - INFO - Buscando dados do campus.
+2019-08-20 09:05:39,139 - INFO - Buscando dados da escola.
+2019-08-20 09:05:43,258 - INFO - Buscando dados do turno.
+2019-08-20 09:05:43,259 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:43,260 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:05:44,014 - INFO - Buscando dados do turno.
+2019-08-20 09:05:44,014 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:44,015 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:05:44,510 - INFO - Buscando dados do turno.
+2019-08-20 09:05:44,511 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:44,511 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:05:45,115 - INFO - Buscando dados do turno.
+2019-08-20 09:05:45,115 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:45,115 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:05:45,761 - INFO - Buscando dados do turno.
+2019-08-20 09:05:45,762 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:45,762 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:05:46,322 - INFO - Buscando dados do turno.
+2019-08-20 09:05:46,322 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:05:46,323 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:48,341 - INFO - Buscando dados do turno.
+2019-08-20 09:06:48,342 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:48,343 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:49,050 - INFO - Buscando dados do turno.
+2019-08-20 09:06:49,051 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:49,051 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:49,382 - INFO - Buscando dados do turno.
+2019-08-20 09:06:49,382 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:49,383 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:49,740 - INFO - Buscando dados do turno.
+2019-08-20 09:06:49,741 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:49,741 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:50,078 - INFO - Buscando dados do turno.
+2019-08-20 09:06:50,079 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:50,080 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:50,378 - INFO - Buscando dados do turno.
+2019-08-20 09:06:50,379 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:50,379 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:50,731 - INFO - Buscando dados do turno.
+2019-08-20 09:06:50,732 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:50,733 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:51,008 - INFO - Buscando dados do turno.
+2019-08-20 09:06:51,009 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:51,009 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:51,361 - INFO - Buscando dados do turno.
+2019-08-20 09:06:51,361 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:51,362 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:51,675 - INFO - Buscando dados do turno.
+2019-08-20 09:06:51,675 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:51,675 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:52,030 - INFO - Buscando dados do turno.
+2019-08-20 09:06:52,031 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:52,031 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:52,342 - INFO - Buscando dados do turno.
+2019-08-20 09:06:52,342 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:52,343 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:52,641 - INFO - Buscando dados do turno.
+2019-08-20 09:06:52,642 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:52,642 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:52,922 - INFO - Buscando dados do turno.
+2019-08-20 09:06:52,923 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:52,924 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:53,243 - INFO - Buscando dados do turno.
+2019-08-20 09:06:53,244 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:53,244 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:06:53,490 - INFO - Buscando dados do turno.
+2019-08-20 09:06:53,491 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:06:53,491 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:10,624 - INFO - Buscando dados do turno.
+2019-08-20 09:09:10,624 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:09:10,625 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:11,278 - INFO - Buscando dados do turno.
+2019-08-20 09:09:11,279 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:09:11,279 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:11,912 - INFO - Buscando dados do turno.
+2019-08-20 09:09:11,913 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:09:11,913 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:21,758 - INFO - Buscando dados do turno.
+2019-08-20 09:09:21,759 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:09:21,759 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:22,680 - INFO - Buscando dados do turno.
+2019-08-20 09:09:22,681 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:09:22,682 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:09:40,229 - INFO - Buscando dados do curso.
+2019-08-20 09:10:12,058 - INFO - Buscando dados do curso.
+2019-08-20 09:11:14,401 - INFO - Buscando dados do turno.
+2019-08-20 09:11:14,402 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:11:14,402 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:12:05,090 - INFO - Buscando dados do turno.
+2019-08-20 09:12:05,091 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:12:05,091 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:12:42,906 - INFO - Buscando dados do professor.
+2019-08-20 09:12:46,063 - INFO - Buscando dados do endereco.
+2019-08-20 09:12:46,695 - INFO - Buscando dados do endereco.
+2019-08-20 09:12:47,308 - INFO - Buscando dados do endereco.
+2019-08-20 09:12:47,966 - INFO - Buscando dados do endereco.
+2019-08-20 09:12:53,244 - INFO - Buscando dados do aluno.
+2019-08-20 09:12:53,538 - INFO - Buscando dados do aluno.
+2019-08-20 09:12:59,030 - INFO - Buscando dados do turno.
+2019-08-20 09:12:59,031 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:12:59,031 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:13:04,480 - INFO - Buscando dados do turno.
+2019-08-20 09:13:04,482 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:13:04,482 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:14:53,258 - INFO - Buscando dados do turno.
+2019-08-20 09:14:53,266 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:14:53,266 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:22:53,149 - INFO - Buscando dados do curso.
+2019-08-20 09:23:03,544 - INFO - Buscando dados do turno.
+2019-08-20 09:23:03,545 - ERROR - Ops,aconteceu um erro.
+2019-08-20 09:23:03,545 - ERROR - <class 'sqlite3.Error'>
+2019-08-20 09:23:24,263 - INFO - Listando alunos.
+2019-08-20 09:23:26,719 - INFO - Listando disciplinas.
+2019-08-20 09:23:34,134 - INFO - Listando campus.
+2019-08-20 09:23:37,043 - INFO - Listando escolas.
+2019-08-20 09:23:39,165 - INFO - Listando cursos.
+2019-08-20 09:23:40,398 - INFO - Listando cursos.
+2019-08-20 09:23:43,411 - INFO - Listando alunos.
+2019-08-20 09:23:54,756 - INFO - Listando turnos.
+2019-08-20 09:24:00,303 - INFO - Listando cursos.
+2019-08-20 09:24:03,750 - INFO - Listando turmas.
+2019-08-20 09:24:06,209 - INFO - Listando professores.
+2019-08-20 09:24:08,918 - INFO - Listando endereços.
+2019-08-20 09:31:28,692 - INFO - Listando turmas.
+2019-08-20 09:31:34,328 - INFO - Listando campus.
+2019-08-20 09:31:39,922 - INFO - Listando campus pelo seu Id.
+2019-08-20 09:31:43,175 - INFO - Listando campus.
+2019-08-20 09:41:28,114 - INFO - Buscando dados do campus.
+2019-08-20 09:41:41,030 - INFO - Buscando dados do campus.
+2019-08-20 09:47:51,679 - INFO - Listando alunos.

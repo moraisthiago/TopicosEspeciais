@@ -21,7 +21,7 @@ endereco_schema = {
     'complemento':{'type':'string'},
     'bairro':{'type':'string'},
     'cep':{'type':'string'},
-    "numero":{'type':"string"}
+    "numero":{'type':'string'}
     }
 }
 
@@ -38,8 +38,8 @@ escola_schema = {
     'required': ['nome', 'fk_id_endereco', 'fk_id_campus'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_endereco':{'type':'int'},
-    'fk_id_campus':{'type':'int'}
+    'fk_id_endereco':{'type':'string'},
+    'fk_id_campus':{'type':'string'}
     }
 }
 
@@ -54,7 +54,7 @@ curso_schema = {
     'required':['nome', 'fk_id_turno'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_turno':{'type':'int'}
+    'fk_id_turno':{'type':'string'}
     }
 }
 
@@ -65,8 +65,8 @@ aluno_schema = {
     'matricula':{'type':'string'},
     'cpf':{'type':'string'},
     'nascimento':{'type':'string'},
-    'fk_id_endereco':{'type':'int'},
-    'fk_id_curso':{'type':'int'}
+    'fk_id_endereco':{'type':'string'},
+    'fk_id_curso':{'type':'string'}
     }
 }
 
@@ -74,7 +74,7 @@ turma_schema = {
     'required': ['nome','fk_id_curso'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_curso':{'type':'int'}
+    'fk_id_curso':{'type':'string'}
     }
 }
 
@@ -82,7 +82,7 @@ professor_schema ={
     'required': ['nome','fk_id_endereco'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_endereco':{'type':'int'}
+    'fk_id_endereco':{'type':'string'}
     }
 }
 
@@ -90,7 +90,7 @@ disciplina_schema = {
     'required':['nome','fk_id_endereco'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_endereco':{'type':'int'}
+    'fk_id_endereco':{'type':'string'}
     }
 }
 
@@ -453,7 +453,7 @@ def updateEscola():
     nome = escolaJson['nome']
     fk_id_endereco = escolaJson['fk_id_endereco']
     fk_id_campus = escolaJson['fk_id_campus']
-    escola = Escola(nome, fk_id_endereco, fk_id_campus)
+
     try:
         conn = sqlite3.connect('EscolaApp_versao2.db')
         cursor = conn.cursor()
@@ -1217,7 +1217,7 @@ def setDisciplina():
 
     logger.info("Buscando dados da disciplina.")
 
-    dsiciplinaJson = request.get_json()
+    disciplinaJson = request.get_json()
     nome = disciplinaJson['nome']
     fk_id_professor = disciplinaJson['fk_id_professor']
 
@@ -1282,7 +1282,7 @@ def updateDisciplina():
 
             conn.commit()
             id = cursor.lastrowid
-            dsiciplinaJson['id_disciplina']= id
+            disciplinaJson['id_disciplina']= id
 
         conn.close()
     except(sqlite3.Error):
