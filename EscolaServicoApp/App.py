@@ -20,7 +20,7 @@ schema.init_app(app)
 escola_schema = {
     'required': ['nome', 'logradouro', 'cidade'],
     'properties': {
-        'nome' {'type': 'string'},
+        'nome': {'type': 'string'},
         'logradouro': {'type': 'string'},
         'cidade': {'type': 'string'}
     }
@@ -54,7 +54,7 @@ turma_schema = {
 }
 
 disciplina_schema = {
-    'required': ['nome'].
+    'required': ['nome'],
     'properties': {
         'nome': {'type': 'string'}
     }
