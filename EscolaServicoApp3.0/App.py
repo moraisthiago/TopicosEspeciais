@@ -97,7 +97,7 @@ disciplina_schema = {
 @app.route("/enderecos", methods = ['GET'])
 def getEndereco():
 
-    logger.info("Listando endereços.")
+    logger.info("Listando enderecos.")
     try:
         conn = sqlite3.connect('EscolaApp_versao2.db')
         cursor = conn.cursor()
@@ -122,7 +122,7 @@ def getEndereco():
 @app.route("/enderecos/<int:id>", methods= ['GET'])
 def getEnderecoById(id):
 
-    logger.info("Listando endereço pelo seu Id.")
+    logger.info("Listando endereco pelo seu Id.")
     try:
         conn = sqlite3.connect('EscolaApp_versao2.db')
 
@@ -182,7 +182,7 @@ def setEndereco():
 @app.route("/endereco/<int:id>", methods=['PUT'])
 def updateEndereco():
 
-    logger.info("Atualizando dados do endereço.")
+    logger.info("Atualizando dados do endereco.")
 
     enderecoJson = request.get_json()
     logradouro = enderecoJson['logradouro']
