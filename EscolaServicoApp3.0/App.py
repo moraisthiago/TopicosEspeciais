@@ -1,11 +1,14 @@
 from flask import Flask, request, jsonify
 import sqlite3
 import logging
+from flask_cors import CORS
 from flask_json_schema import JsonSchema, JsonValidationError
 
 
 app = Flask(__name__)
 schema = JsonSchema(app)
+schema.init_app(app)
+
 
 formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 handler = logging.FileHandler("escolaAPP.log")
