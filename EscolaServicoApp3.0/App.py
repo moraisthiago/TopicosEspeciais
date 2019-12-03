@@ -1,8 +1,14 @@
 from flask import Flask, request, jsonify
 import sqlite3
 import logging
-from flask_cors import CORS
 from flask_json_schema import JsonSchema, JsonValidationError
+
+'''
+Adicionar a importação do CORS e não esquecer de fazer o pip no flask-env:
+$ pip install -U flask-cors
+'''
+
+from flask_cors import CORS
 
 
 app = Flask(__name__)
@@ -93,7 +99,7 @@ disciplina_schema = {
     'required':['nome','fk_id_endereco'],
     'properties':{
     'nome':{'type':'string'},
-    'fk_id_endereco':{'type':'string'}
+    'fk_id_professor':{'type':'string'}
     }
 }
 
@@ -565,7 +571,7 @@ def setTurno():
         cursor.execute("""
             INSERT INTO tb_turno(nome)
             VALUES(?);
-        """, (nome))
+        """, (nome, ))
         conn.commit()
         conn.close()
 
@@ -687,7 +693,7 @@ def setCurso():
 
     cursoJson = request.get_json()
     nome = cursoJson['nome']
-    fk_id_turno = cursoJson['fk_id_endereco']
+    fk_id_turno = cursoJson['fk_id_turno']
 
 
     try:
@@ -696,12 +702,12 @@ def setCurso():
         cursor.execute("""
             INSERT INTO tb_curso(nome, fk_id_turno)
             VALUES(?, ?);
-        """, (nome, fk_id_endereco))
+        """, (nome, fk_id_turno))
         conn.commit()
         conn.close()
 
     except(sqlite3.Error):
-        logger.error("Ops,aconteceu um erro.")
+        logger.error("Ops, aconteceu um erro.")
         logger.error(sqlite3.Error)
 
     id = cursor.lastrowid
@@ -1305,6 +1311,11 @@ def dict_factory(linha, cursor):
 def validation_error(e):
     return jsonify({ 'error': e.message, 'errors': [validation_error.message for validation_error  in e.errors]})
 
+'''
+    Instaciar o objeto CORS passando como parâmetros a app e as urls permitidas.
+'''
+
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 if(__name__ == '__main__'):
     app.run(host='0.0.0.0', debug=True, use_reloader=True)

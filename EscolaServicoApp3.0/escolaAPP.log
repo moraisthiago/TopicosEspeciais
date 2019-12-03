@@ -207,3 +207,99 @@
 2019-11-28 11:25:50,206 - INFO - Buscando dados do turno.
 2019-11-28 11:30:42,371 - INFO - Listando enderecos.
 2019-12-02 10:24:49,300 - INFO - Buscando dados do turno.
+2019-12-03 08:16:13,989 - INFO - Buscando dados do turno.
+2019-12-03 08:16:14,009 - ERROR - Ops,aconteceu um erro.
+2019-12-03 08:16:14,009 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 08:17:50,651 - INFO - Buscando dados do endereco.
+2019-12-03 08:18:57,949 - INFO - Buscando dados do professor.
+2019-12-03 08:22:45,609 - INFO - Buscando dados do curso.
+2019-12-03 08:23:51,270 - INFO - Buscando dados do aluno.
+2019-12-03 08:24:04,663 - INFO - Buscando dados da escola.
+2019-12-03 08:25:10,149 - INFO - Buscando dados do campus.
+2019-12-03 08:53:17,103 - INFO - Buscando dados do professor.
+2019-12-03 08:54:03,627 - INFO - Buscando dados do turno.
+2019-12-03 08:54:03,627 - ERROR - Ops,aconteceu um erro.
+2019-12-03 08:54:03,627 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 08:54:26,360 - INFO - Buscando dados do turno.
+2019-12-03 08:54:26,360 - ERROR - Ops,aconteceu um erro.
+2019-12-03 08:54:26,361 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 08:55:08,325 - INFO - Buscando dados do professor.
+2019-12-03 08:59:44,153 - INFO - Buscando dados do endereco.
+2019-12-03 09:01:36,852 - INFO - Buscando dados da disciplina.
+2019-12-03 09:16:19,486 - INFO - Buscando dados da disciplina.
+2019-12-03 09:19:56,869 - INFO - Buscando dados da disciplina.
+2019-12-03 09:20:36,207 - INFO - Buscando dados do turno.
+2019-12-03 09:20:36,207 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:20:36,207 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:20:58,327 - INFO - Buscando dados do turno.
+2019-12-03 09:20:58,327 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:20:58,328 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:26:18,773 - INFO - Listando disciplinas.
+2019-12-03 09:27:09,500 - INFO - Buscando dados do turno.
+2019-12-03 09:27:09,501 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:27:09,501 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:40,229 - INFO - Buscando dados do turno.
+2019-12-03 09:28:40,230 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:40,230 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:41,568 - INFO - Buscando dados do turno.
+2019-12-03 09:28:41,569 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:41,569 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:42,386 - INFO - Buscando dados do turno.
+2019-12-03 09:28:42,386 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:42,386 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:42,557 - INFO - Buscando dados do turno.
+2019-12-03 09:28:42,558 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:42,558 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:42,706 - INFO - Buscando dados do turno.
+2019-12-03 09:28:42,707 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:42,708 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:42,949 - INFO - Buscando dados do turno.
+2019-12-03 09:28:42,949 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:42,949 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:43,063 - INFO - Buscando dados do turno.
+2019-12-03 09:28:43,064 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:43,064 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:43,210 - INFO - Buscando dados do turno.
+2019-12-03 09:28:43,210 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:43,210 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:43,360 - INFO - Buscando dados do turno.
+2019-12-03 09:28:43,361 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:43,361 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:43,464 - INFO - Buscando dados do turno.
+2019-12-03 09:28:43,465 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:43,465 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:28:51,218 - INFO - Buscando dados do turno.
+2019-12-03 09:28:51,219 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:28:51,219 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:29:17,151 - INFO - Listando turnos.
+2019-12-03 09:29:27,728 - INFO - Listando turnos.
+2019-12-03 09:29:55,797 - INFO - Buscando dados do turno.
+2019-12-03 09:29:55,797 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:29:55,797 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:33:04,328 - INFO - Buscando dados da turma.
+2019-12-03 09:33:56,537 - INFO - Buscando dados do curso.
+2019-12-03 09:38:41,604 - INFO - Buscando dados do curso.
+2019-12-03 09:39:50,835 - INFO - Buscando dados do curso.
+2019-12-03 09:39:54,570 - INFO - Buscando dados do curso.
+2019-12-03 09:43:22,204 - INFO - Buscando dados do curso.
+2019-12-03 09:45:00,371 - INFO - Buscando dados do curso.
+2019-12-03 09:45:21,857 - INFO - Listando cursos.
+2019-12-03 09:46:04,226 - INFO - Buscando dados do aluno.
+2019-12-03 09:48:14,815 - INFO - Buscando dados do turno.
+2019-12-03 09:48:14,816 - ERROR - Ops,aconteceu um erro.
+2019-12-03 09:48:14,816 - ERROR - <class 'sqlite3.Error'>
+2019-12-03 09:49:08,262 - INFO - Buscando dados do turno.
+2019-12-03 09:49:21,437 - INFO - Buscando dados do curso.
+2019-12-03 09:50:24,976 - INFO - Buscando dados do curso.
+2019-12-03 09:50:29,082 - INFO - Listando cursos.
+2019-12-03 09:50:32,028 - INFO - Listando turnos.
+2019-12-03 09:51:16,529 - INFO - Buscando dados do campus.
+2019-12-03 09:52:43,071 - INFO - Buscando dados do campus.
+2019-12-03 09:53:06,340 - INFO - Listando campus.
+2019-12-03 09:53:44,692 - INFO - Buscando dados do campus.
+2019-12-03 09:54:11,986 - INFO - Buscando dados do campus.
+2019-12-03 09:55:35,516 - INFO - Buscando dados do campus.
+2019-12-03 09:59:50,523 - INFO - Buscando dados da escola.
+2019-12-03 10:06:55,543 - INFO - Buscando dados do campus.
+2019-12-03 10:08:00,649 - INFO - Listando campus.
+2019-12-03 10:18:06,032 - INFO - Listando campus.
